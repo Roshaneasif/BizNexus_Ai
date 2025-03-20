@@ -1,17 +1,22 @@
 import './App.css'
-import Home from "./components/home";
-import EnvironmentalMap from './components/EnvironmentalMap'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import ChatBot from './pages/ChatBot';
+import Map from './pages/Map';
+import PitchGenerator from './pages/PitchGenerator';
+
 function App() {
   return (
-    <>
-       <Router>
-          <Routes className='text-black'>
-          <Route path="/" element={<Home />} />
-          <Route path="/map" element={<EnvironmentalMap />} />
+    <Router>
+        <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/chat" element={<ChatBot />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/pitch" element={<PitchGenerator />} />
           </Routes>
-        </Router>
-    </>
+    </Router>
   )
 }
 
